@@ -8,3 +8,12 @@
 
 // Google font: Lato
 
+const app = new Vue({
+    el: "#root",
+    data:{
+        todos: ["Lavare i piatti", "Fare la spesa", "Andare al bar"],
+    },
+    methods:{
+        
+    },
+});
