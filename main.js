@@ -15,12 +15,15 @@ const app = new Vue({
         todos: [
             {
                 title: "Lavare i piatti",
+                stato: false,
             },
             {
                 title: "Fare la spesa",
+                stato: false,
             },
             {
                 title: "Andare al bar",
+                stato: false,
             }
         ],
 
@@ -31,15 +34,19 @@ const app = new Vue({
             this.todos.push(
                 {
                     title: this.newTodo,
+                    stato: false,
                 }
             );
-
             // svuoto l'input
             this.newTodo = "";
         },
 
         removeTodo: function(index){
             this.todos.splice(index, 1)
+        },
+
+        doFatto: function(index){
+            this.todos[index].stato = true;
         },
     },
 });

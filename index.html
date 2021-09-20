@@ -38,7 +38,12 @@
 
             <!-- stampo la lista con un ciclo -->
             <ul v-if="todos.length > 0">
-                <li v-for="(todo, index) in todos" :key="todo.index">{{todo.title}} <i class="fas fa-times" @click="removeTodo(index)"></i></li>
+                <li v-for="(todo, index) in todos" :key="todo.index">
+                    <button @click="doFatto(index)" v-if="todos[index].stato == false">Fatto</button>
+                    <span class="checked" v-else>{{todo.title}}</span>
+                    <span v-if="todos[index].stato == false">{{todo.title}}</span> 
+                    <i class="fas fa-times" @click="removeTodo(index)"></i>
+                </li>
             </ul>
 
             <!-- se la lista è vuota allora stampo l'h3 (v-if / v-else) -->

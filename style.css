@@ -78,3 +78,12 @@ header{
     margin-right: 20px;
     color: var(--bg-body);
 }
+
+.container ul li button{
+    margin-right: 10px;
+}
+
+.checked{
+    color: rgb(24, 168, 31);
+    text-decoration: line-through;
+}
