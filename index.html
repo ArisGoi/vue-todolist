@@ -20,7 +20,13 @@
 </head>
 <body><div id="root">
     <header>
-        <img class="logo" src="logo-white.png" alt="Logo Boolean">
+        <!-- <img class="logo" src="logo-white.png" alt="Logo Boolean"> -->
+
+        <picture>
+            <source srcset="logo-white.png" media="(prefers-color-scheme: dark)">
+            <img class="logo" src="logo.png">
+        </picture>
+
         <section id="inputTODO">
             <input type="text" v-model="newTodo" v-on:keyup.enter="addTodo()" placeholder="Inserisci un ToDo alla lista">
             <button @click="addTodo()">Aggiungi todo</button>

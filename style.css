@@ -5,15 +5,30 @@
     box-sizing: border-box;
 }
 
+:root{
+    --bg-body: #222;
+    --bg-container: #666;
+    --text-todo: #fff;
+}
+
+/* light mode */
+@media (prefers-color-scheme: light){
+    :root{
+        --bg-body: #fff;
+        --bg-container: #ccc;
+        --text-todo: #000;
+    }
+}
+
 /* Common */
 body{
     padding-top: 40px;
-    
+
     font-family: 'Lato', sans-serif;
     font-weight: 400;
 
-    background-color: #222;
-    color: white;
+    background-color: var(--bg-body);
+    color: var(--text-todo);
 }
 
 
@@ -31,9 +46,9 @@ header{
 .container{
     max-width: 1200px;
     min-height: 40px;
-    background-color: #666;
+    background-color: var(--bg-container);
     margin: auto;
-    padding: 20px;
+    padding: 10px 25px;
 }
 
 .container ul{
@@ -46,7 +61,7 @@ header{
     content: '';
     height: 3px;
     width: 100%;
-    background-color: #222;
+    background-color: var(--bg-body);
     position: absolute;
     top: 0;
     left: 0;
@@ -61,5 +76,5 @@ header{
 .container ul li i{
     margin-left: auto;
     margin-right: 20px;
-    color: #222;
+    color: var(--bg-body);
 }
