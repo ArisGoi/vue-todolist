@@ -11,9 +11,35 @@
 const app = new Vue({
     el: "#root",
     data:{
-        todos: ["Lavare i piatti", "Fare la spesa", "Andare al bar"],
+        newTodo: "",
+        todos: [
+            {
+                title: "Lavare i piatti",
+            },
+            {
+                title: "Fare la spesa",
+            },
+            {
+                title: "Andare al bar",
+            }
+        ],
+
     },
     methods:{
-        
+        addTodo: function(){
+            // pusho un oggetto todo dentro todos
+            this.todos.push(
+                {
+                    title: this.newTodo,
+                }
+            );
+
+            // svuoto l'input
+            this.newTodo = "";
+        },
+
+        removeTodo: function(index){
+            this.todos.splice(index, 1)
+        },
     },
 });
